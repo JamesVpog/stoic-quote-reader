@@ -6,5 +6,5 @@ Tools used:
 
 - public stoic quotes api <https://github.com/tlcheah2/stoic-quote-lambda-public-api>
 - fastAPI for backend
-- elevenlabs for reading quotes outloud
+- elevenlabs for reading quotes in voice
 - html css js for frontend
