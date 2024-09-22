@@ -6,12 +6,12 @@ async function fetchStoicQuote() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        console.log(data);
         document.getElementById("quote").innerText = data.quote;
         document.getElementById("author").innerText = data.author;
 
         // Start the countdown timer for the next quote
-        console.log(data.last_dt)
+        console.log('why')
+        console.log(data)
         startCountdown(data.last_dt);
     } catch (error) {
         console.error('Error fetching Stoic quote:', error);
