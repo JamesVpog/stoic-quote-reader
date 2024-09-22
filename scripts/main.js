@@ -22,10 +22,10 @@ async function fetchMaleVoice() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         // response is mp3 file
-        const res = await response.json();
-        console.log(res.file_path);
-        console.log('button is being pressed')
-        const audio = new Audio(res.file_path);
+        const audioBlob = await response.blob();
+        const audioUrl = URL.createObjectURL(audioBlob);
+        console.log(audioUrl);
+        const audio = new Audio(audioUrl);
         audio.play();
     } catch (error) {
         console.error('Error fetching male audio:', error);
@@ -39,10 +39,10 @@ async function fetchFemaleVoice() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         // response is mp3 file
-        const res = await response.json();
-        console.log(res.file_path);
-        console.log('button is being pressed')
-        const audio = new Audio(res.file_path);
+        const audioBlob = await response.blob();
+        const audioUrl = URL.createObjectURL(audioBlob);
+        console.log(audioUrl);
+        const audio = new Audio(audioUrl);
         audio.play();
     } catch (error) {
         console.error('Error fetching female audio:', error);
