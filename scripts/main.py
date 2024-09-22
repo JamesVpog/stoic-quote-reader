@@ -42,7 +42,8 @@ async def grab_stoic_quote():
 
         quote = data["data"].get("quote", "No quote available")
         author = data["data"].get("author", "Unknown author")
-        stoic_quote = {"quote": quote, "author": author}
+        last_dt = dt.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        stoic_quote = {"quote": quote, "author": author, "last_dt" : last_dt}
         
         write_to_file(file_path, stoic_quote)
     except Exception as e:
@@ -175,7 +176,7 @@ async def get_stoic_quote():
 async def play_male_voice():
     file_path = "male_voice.mp3"
     if os.path.exists(file_path):
-        return {'file_path': file_path}
+        return FileResponse(file_path, media_type="audio/mpeg", filename="male_voice.mp3")
     else:
         return {"message": "Male voice not available yet. Please try again later."}
 
@@ -184,7 +185,7 @@ async def play_male_voice():
 async def play_female_voice():
     file_path = "female_voice.mp3"
     if os.path.exists(file_path):
-        return {'file_path': file_path}
+        return FileResponse(file_path, media_type="audio/mpeg", filename="female_voice.mp3")
     else:
         return {"message": "Female voice not available yet. Please try again later."}
 
