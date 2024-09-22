@@ -11,6 +11,7 @@ async function fetchStoicQuote() {
         document.getElementById("author").innerText = data.author;
 
         // Start the countdown timer for the next quote
+        console.log(data.last_dt)
         startCountdown(data.last_dt);
     } catch (error) {
         console.error('Error fetching Stoic quote:', error);
