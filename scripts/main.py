@@ -131,10 +131,8 @@ async def lifespan(app: FastAPI):
         # first time running the server, fetch a new quote
         await grab_stoic_quote()
         
-    # if audio files are not available, and its been more than a day, fetch them
+    # if audio files are not available fetch them
     if not (os.path.exists("male_voice.mp3") and os.path.exists("female_voice.mp3")):
-        last_updated = dt.datetime.strptime(data['last_updated'], "%Y-%m-%d %H:%M:%S")
-        if (dt.datetime.now() - last_updated) > dt.timedelta(days=1): 
             await grab_male_audio()
             await grab_female_audio()
 
@@ -153,12 +151,13 @@ app = FastAPI(lifespan=lifespan)
 
 origins = [
     "http://localhost:8080",
-    "http://127.0.0.1:8080"
+    "http://127.0.0.1:8080",
+    "https://stoic-quote-reader.info"
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=['*'],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -192,3 +191,4 @@ async def play_female_voice():
 @app.get("/")
 async def root():
     return {"message": "Hello World"}
+
