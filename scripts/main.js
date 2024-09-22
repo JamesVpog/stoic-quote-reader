@@ -1,7 +1,7 @@
 // Function to fetch the Stoic quote from the FastAPI server
 async function fetchStoicQuote() {
     try {
-        const response = await fetch('https://146.190.161.60:8000/stoic-quote');
+        const response = await fetch('https://api.stoic-quote-reader.info/stoic-quote');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -17,7 +17,7 @@ async function fetchStoicQuote() {
 // function to fetch and play the audio file from the server
 async function fetchMaleVoice() {
     try {
-        const response = await fetch('https://146.190.161.60:8000/play-male-voice');
+        const response = await fetch('https://api.stoic-quote-reader.info/play-male-voice');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -34,7 +34,7 @@ async function fetchMaleVoice() {
 
 async function fetchFemaleVoice() {
     try {
-        const response = await fetch('https://146.190.161.60:8000/play-female-voice');
+        const response = await fetch('https://api.stoic-quote-reader.info/play-female-voice');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
