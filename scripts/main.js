@@ -10,6 +10,7 @@ async function fetchStoicQuote() {
         document.getElementById("author").innerText = 'Author: ' + data.author;
 
         // Start the countdown timer for the next quote
+        //TODO: fix timer
         startCountdown(data.last_dt);
     } catch (error) {
         console.error('Error fetching Stoic quote:', error);
@@ -88,5 +89,4 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchStoicQuote();
 });
 
-
-
+//TODO: disable button for duration of quote speaking length
