@@ -42,7 +42,7 @@ async def grab_stoic_quote():
 
         quote = data["data"].get("quote", "No quote available")
         author = data["data"].get("author", "Unknown author")
-        last_dt = dt.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        last_dt = dt.datetime.now().isoformat()
         stoic_quote = {"quote": quote, "author": author, "last_dt" : last_dt}
         
         write_to_file(file_path, stoic_quote)
