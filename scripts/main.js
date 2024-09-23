@@ -7,11 +7,9 @@ async function fetchStoicQuote() {
         }
         const data = await response.json();
         document.getElementById("quote").innerText = data.quote;
-        document.getElementById("author").innerText = data.author;
+        document.getElementById("author").innerText = 'Author' + data.author;
 
         // Start the countdown timer for the next quote
-        console.log('why')
-        console.log(data)
         startCountdown(data.last_dt);
     } catch (error) {
         console.error('Error fetching Stoic quote:', error);
