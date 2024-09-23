@@ -7,7 +7,7 @@ async function fetchStoicQuote() {
         }
         const data = await response.json();
         document.getElementById("quote").innerText = data.quote;
-        document.getElementById("author").innerText = 'Author' + data.author;
+        document.getElementById("author").innerText = 'Author: ' + data.author;
 
         // Start the countdown timer for the next quote
         startCountdown(data.last_dt);
