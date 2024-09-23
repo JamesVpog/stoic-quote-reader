@@ -1,4 +1,4 @@
-# weekend_project_0
+# Stoic Quotes Reader
 
 Website that reads off a new stoicism quote every 24 hours
 
