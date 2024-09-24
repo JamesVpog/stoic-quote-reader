@@ -1,22 +1,29 @@
 <!doctype html>
 <html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Stoicism</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <h1> Welcome to Stoicism </h1>
 
-    <img src="images/stoic_wallpaper.jpeg" alt="My stoic image" />
-    
-    <p id="quote"> Waiting for Stoicism to load... </p> 
-    <p id="author"> Waiting for Stoicism to load... </p>
-    <!--turn button into spinny button when clicked !-->
-    <input id='malebtn' type="button" value= "click me to read quote in male voice" onclick="fetchMaleVoice()" />
-    <input id='femalebtn' type="button" value= "click me to read quote in female voice" onclick="fetchFemaleVoice()" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stoic Quote Reader</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
-    <script src="scripts/main.js"></script>
-  </body>
+<body>
+  <div class="container">
+    <main>
+      <h1 id="quote"> Waiting for Stoicism to load... </h1>
+      <p id="author"> Waiting for Stoicism to load... </p>
+      <div class="button-container">
+        <input id='malebtn' type="button" value="Male Voice" onclick="fetchMaleVoice()" />
+        <input id='femalebtn' type="button" value="Female Voice" onclick="fetchFemaleVoice()" />
+      </div>
+      <div class="fake-footer">
+        <p>Created by James Vongphasouk &copy; 2024</p>
+        <p><a href="https://github.com/JamesVpog/stoic-quote-reader" style="color: inherit;"target="_blank">View on GitHub</a></p>
+      </div>
+    </main>
+</body>
+</div>
+<script src="scripts/main.js"></script>
+
 </html>

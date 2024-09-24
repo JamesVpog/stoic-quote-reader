@@ -6,8 +6,8 @@ async function fetchStoicQuote() {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        document.getElementById("quote").innerText = data.quote;
-        document.getElementById("author").innerText = 'Author: ' + data.author;
+        document.getElementById("quote").innerText =  '"' + data.quote + '"';
+        document.getElementById("author").innerText = '- ' + data.author;
 
         // TODO: fix timer
     } catch (error) {
