@@ -3,17 +3,10 @@
     background-color: #2c3e50;
 }
 
-
-body h1 {
+h1 {
     color: #fff;
     font-size: 2rem;
     max-width: 700px;
-}
-
-header h2 {
-    color: #fff;
-    font-size: 3rem;
-    text-align: center;
 }
 
 p {
@@ -21,19 +14,14 @@ p {
     font-size: 1.2rem;
 }
 
-header {
-    text-align: center;
-    border-color: gray;
-    border-style: solid;
-    border-width: 0 0 1px 0;
-}
 /* Flexbox container */
 .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: 50vh;
+    padding: 20px;
 }
 
 #author {
