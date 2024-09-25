@@ -1,6 +1,6 @@
 # Stoic Quotes Reader
 
-Website that reads off a new stoicism quote every 24 hours
+Website that reads off a new stoicism quote every 12 hours
 
 Tools used:
 
