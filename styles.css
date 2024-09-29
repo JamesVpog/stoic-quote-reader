@@ -14,6 +14,7 @@ p {
     font-size: 1.2rem;
 }
 
+
 /* Flexbox container */
 .container {
     display: flex;
@@ -32,6 +33,7 @@ p {
 }
 
 .fake-footer {
+    color: whitesmoke;
     font-size: 0.8rem;
     text-align: center;
     margin-top: 20px;
@@ -39,6 +41,15 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+    color: green
 }
 
 .button-container {
@@ -63,16 +74,16 @@ input[type="button"] {
     max-width: 250px;
 }
 
-input[type="button"]:hover {
+input[type="button"]:disabled {
+    background-color: #ccc; 
+    color: white;           
+    cursor: not-allowed;    
+  }
+
+input[type="button"]:not(:disabled):hover {
     background-color: #9b59b6;
     transform: scale(1.05);
 }
-
-input:hover {
-    background-color: #9b59b6;
-    transform: scale(1.05);
-}
-
 
 /* Responsive for smaller screens */
 @media (max-width: 768px) {

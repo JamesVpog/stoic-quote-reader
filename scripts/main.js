@@ -30,6 +30,22 @@ async function fetchMaleVoice() {
         console.log(audioUrl);
         const audio = new Audio(audioUrl);
         audio.play();
+
+        const button = document.getElementById("malebtn");
+        const button2 = document.getElementById("femalebtn");
+        button.disabled = true;
+        button2.disabled = true;
+
+        audio.addEventListener('loadedmetadata', () => {
+            const duration = audio.duration;
+
+            // Disable the button and re-enable it after the audio ends
+            audio.play();
+            setTimeout(() => {
+                button.disabled = false;
+                button2.disabled = false;
+            }, duration * 1000); // Convert duration to milliseconds
+        });
     } catch (error) {
         console.error('Error fetching male audio:', error);
     }
@@ -48,6 +64,22 @@ async function fetchFemaleVoice() {
         console.log(audioUrl);
         const audio = new Audio(audioUrl);
         audio.play();
+
+        const button = document.getElementById("malebtn");
+        const button2 = document.getElementById("femalebtn");
+        
+        button.disabled = true;
+        button2.disabled = true;
+        audio.addEventListener('loadedmetadata', () => {
+            const duration = audio.duration;
+
+            // Disable the button and re-enable it after the audio ends
+            audio.play();
+            setTimeout(() => {
+                button.disabled = false;
+                button2.disabled = false;
+            }, duration * 1000); // Convert duration to milliseconds
+        });
     } catch (error) {
         console.error('Error fetching female audio:', error);
     }
