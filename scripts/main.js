@@ -1,16 +1,3 @@
-
-// Google Analytics
-const gaMeasurementID = process.env.GA_MEASUREMENT_ID;
-
-src=`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementID}`
-
-
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', '${gaMeasurementID}');
-
 // Function to fetch the Stoic quote from the FastAPI server
 async function fetchStoicQuote() {
     try {
