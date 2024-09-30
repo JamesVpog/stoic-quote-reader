@@ -113,7 +113,6 @@ async def lifespan(app: FastAPI):
     if os.path.exists(file_path):
         print(os.path.exists(file_path))
         data = read_from_file(file_path)
-        print(data)
         last_updated = dt.datetime.fromisoformat(data['last_dt'])
         if (dt.datetime.now() - last_updated) > dt.timedelta(hours=6): 
             await grab_stoic_quote()
@@ -180,5 +179,3 @@ async def play_female_voice():
 @app.get("/")
 async def root():
     return {"message": "Hello World"}
-
-

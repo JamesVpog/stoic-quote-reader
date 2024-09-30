@@ -1,10 +1,10 @@
-# weekend_project_0
+# Stoic Quotes Reader
 
-Website that reads off a stoicism quote to users that land on the page
+Website that reads off a new stoicism quote every 24 hours
 
 Tools used:
 
 - public stoic quotes api <https://github.com/tlcheah2/stoic-quote-lambda-public-api>
-- fastAPI for backend
+- fastAPI for backend (hosted on DigitalOcean)
 - elevenlabs for reading quotes in voice
-- html css js for frontend
+- html css js for frontend (hosted in Vercel)
