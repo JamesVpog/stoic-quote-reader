@@ -1,6 +1,4 @@
 
-require('dotenv').config();
-
 // Google Analytics
 const gaMeasurementID = process.env.GA_MEASUREMENT_ID;
 
