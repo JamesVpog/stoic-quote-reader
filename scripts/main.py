@@ -111,6 +111,7 @@ async def grab_female_audio():
 async def lifespan(app: FastAPI):
     global stoic_quote
     if os.path.exists(file_path):
+        print(os.path.exists(file_path))
         data = read_from_file(file_path)
         last_updated = dt.datetime.fromisoformat(data['last_dt'])
         if (dt.datetime.now() - last_updated) > dt.timedelta(hours=6): 
@@ -127,7 +128,7 @@ async def lifespan(app: FastAPI):
     async def periodically_update_stoic_quote():
         while True:
             # await asyncio.sleep(60)  # 1 minute for testing
-            await asyncio.sleep(12 * 60 * 60)  # 12 hours
+            await asyncio.sleep(24 * 60 * 60)  # 24 hours
             await grab_stoic_quote()
     
     asyncio.create_task(periodically_update_stoic_quote())
@@ -179,4 +180,3 @@ async def play_female_voice():
 @app.get("/")
 async def root():
     return {"message": "Hello World"}
-

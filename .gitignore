@@ -8,6 +8,9 @@ __pycache__/
 # C extensions
 *.so
 
+female_voice.mp3
+male_voice.mp3
+stoic-quote.json
 # Distribution / packaging
 .Python
 build/
