@@ -1,4 +1,5 @@
 // Function to fetch the Stoic quote from the FastAPI server
+// TODO: use axios 
 async function fetchStoicQuote() {
     try {
         // const response = await fetch('http://127.0.0.1:8000/stoic-quote');
@@ -90,4 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchStoicQuote();
 });
 
-//TODO: disable button for duration of quote speaking length
+// use event listener to listen for male button click
+document.getElementById("malebtn").addEventListener("click", fetchMaleVoice);
+
+// use event listener to listen for female button click
+document.getElementById("femalebtn").addEventListener("click", fetchFemaleVoice);
